@@ -1,4 +1,15 @@
 ---
+- name: Create jenkins group
+  group:
+    state: present
+    name: "{{ jenkins_process_group }}"
+
+- name: Create jenkins user
+  user:
+    state: present
+    name: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
+    
 - name: Ensure dependencies are installed.
   package:
     name:
