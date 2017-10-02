@@ -43,7 +43,7 @@
     regexp: '^JENKINS_USER=.*'
     line: 'JENKINS_USER={{ jenkins_process_user }}'
     state: present
-    register: jenkins_user_config
+  register: jenkins_user_config
 
 - name: Create custom init scripts directory.
   file:
